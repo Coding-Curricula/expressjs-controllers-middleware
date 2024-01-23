@@ -1,5 +1,6 @@
 const express = require('express');
 const fruitRoutes = require('./routes/fruitRoutes');
+const petsRoutes = require('./routes/petsRoutes');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.get('/api/health', (req, res) => {
 });
 
 app.use('/api/fruits', fruitRoutes);
+app.use('/api/pets', petsRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);

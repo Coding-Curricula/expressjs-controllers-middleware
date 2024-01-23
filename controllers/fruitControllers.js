@@ -62,11 +62,12 @@ getFruitById = (req, res) => {
 // POST new fruit
 addNewFruit = (req, res) => {
     try {
-        const body = req.body;
         const id = fruits.length + 1;
         const fruit = {
             id,
-            ...body
+            name: req.body.name,
+            color: req.body.color,
+            flavor: req.body.flavor
         };
         fruits.push(fruit);
         res.send(fruit);
